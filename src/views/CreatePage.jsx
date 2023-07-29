@@ -1,6 +1,9 @@
+import { CreateForm } from "../components/CreateForm"
 
 export const CreatePage = () => {
   return (
-    <div>CreatePage</div>
+    <>
+        <CreateForm />
+    </>
   )
 }

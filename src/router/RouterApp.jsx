@@ -6,10 +6,10 @@ export const RouterApp = () => {
   return (
     <>
         <Routes>
-            <Route path='/' element={<HomePage/>}/>
-            <Route path='create' element={<CreatePage/>}/>
-            <Route path='edit/' element={<EditPage/>}/>
-            <Route path='*' element={<NotFound/>}/>
+            <Route path='/' element={<HomePage/>} />
+            <Route path='create' element={<CreatePage/>} />
+            <Route path='edit/' element={<EditPage/>} />
+            <Route path='*' element={<NotFound/>} />
         </Routes>
     </>
   )
