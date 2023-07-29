@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from "../config/firebase";
 import { Link } from "react-router-dom";
+import { confirmDeleteUser } from "../utils/deleteUser";
 
 
 export const TableGetUseer = () => {
@@ -20,7 +21,7 @@ export const TableGetUseer = () => {
 
     useEffect(() => {
         getUsers()
-    }, [])
+    }, [users])
 
 
 
@@ -54,8 +55,14 @@ export const TableGetUseer = () => {
                                     <td>{user.email}</td>
                                     <td>{user.age}</td>
                                     <td>
-                                        <Link to={`edit/${user.id}`} className = 'btn btn-warning mx-2'>Edit</Link>
-                                        <button className ='btn btn-danger mx-2'>Delete</button>
+                                        <Link to={`edit/${user.id}`} className = 'btn btn-warning mx-2'>
+                                            <i className="fa-solid fa-user-pen"></i>
+                                        </Link>
+                                        <button 
+                                            className ='btn btn-danger mx-2'
+                                            onClick = {() => {confirmDeleteUser(user.id)}} 
+                                            ><i className="fa-solid fa-trash-can"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             ))
